@@ -15,7 +15,7 @@ function App() {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/students');
+      const response = await fetch('https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students');
       const data = await response.json();
       setStudents(data);
     } catch (error) {
@@ -42,8 +42,8 @@ function App() {
     };
 
     const url = editingId
-      ? `http://localhost:5000/api/students/${editingId}`
-      : 'http://localhost:5000/api/students';
+      ? `https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students/${editingId}`
+      : 'https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students';
     const method = editingId ? 'PUT' : 'POST';
 
     try {
@@ -86,7 +86,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/students/${id}`, {
+      const response = await fetch(`https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students/${id}`, {
         method: 'DELETE',
       });
 
