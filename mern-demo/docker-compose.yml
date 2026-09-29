@@ -8,7 +8,7 @@ services:
       - .env
 
   frontend:
-    build: ./client
+    image: khanh1205/mern-frontend:2.0
     container_name: mern-frontend
     ports:
       - "5173:4173"

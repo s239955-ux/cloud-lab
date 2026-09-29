@@ -7,6 +7,8 @@ const emptyForm = {
   email: '',
 };
 
+const API_URL = '/api/students';
+
 function App() {
   const [students, setStudents] = useState([]);
   const [form, setForm] = useState(emptyForm);
@@ -15,7 +17,7 @@ function App() {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch('https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students');
+      const response = await fetch(API_URL);
       const data = await response.json();
       setStudents(data);
     } catch (error) {
@@ -42,8 +44,8 @@ function App() {
     };
 
     const url = editingId
-      ? `https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students/${editingId}`
-      : 'https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students';
+      ? `${API_URL}/${editingId}`
+      : API_URL;
     const method = editingId ? 'PUT' : 'POST';
 
     try {
@@ -86,7 +88,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(`https://solid-acorn-v6xpr7gg94x6fw9w9-5000.app.github.dev/api/students/${id}`, {
+      const response = await fetch(`${API_URL}/${id}`, {
         method: 'DELETE',
       });
 
@@ -111,7 +113,7 @@ function App() {
       <header className="topbar">
         <div>
           <p className="eyebrow">Cloud Lab</p>
-          <h1>Quản lý sinh viên</h1>
+          <h1>Quản lý sinh viên - Phiên bản 2.0</h1>
         </div>
       </header>
 
